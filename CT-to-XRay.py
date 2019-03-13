@@ -120,6 +120,7 @@ fig.suptitle('volume - 225,512,512')
 axs[0, 0].imshow(np.mean(volume,axis=0),cmap='gray')
 axs[0, 0].set_title('axis=0', fontsize=10)
 
+####xray image is created by creating 2d image using mean on each colume of the 3d volume, createing a 2d representaion####
 axs[0, 1].imshow(np.mean(volume,axis=1),cmap='gray')
 axs[0, 1].set_title('axis=1 - xray image', fontsize=10)
 
@@ -268,15 +269,7 @@ plt.imsave('c:/temp/slice.jpg',(volume[220]))
 print("slice thikness: {}".format(slices[0].SliceThickness))
 print("pixel spacing (row,col) {} {}".format(slices[0].PixelSpacing[0],slices[0].PixelSpacing[0]))
 
-#show sampels
-def sample_stack(stack, rows=6, cols=6, start_with=10, show_every=3):
-    fig,ax = plt.subplots(rows,cols,figsize=[12,12])
-    for i in range(rows*cols):
-        ind = start_with + i*show_every
-        ax[int(i/rows),int(i % rows)].set_title('slice %d' % ind)
-        ax[int(i/rows),int(i % rows)].imshow(stack[ind],cmap='gray')
-        ax[int(i/rows),int(i % rows)].axis('off')
-    plt.show()
+
 
 
 
