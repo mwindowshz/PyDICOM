@@ -104,6 +104,7 @@ def LoadDicomPath(path):
     return volume
 
 
+''' main program code'''
 
 dcomPath = 'D:/Learn/pydicom/Case2/*.dcm'
 volume = LoadDicomPath(dcomPath)
